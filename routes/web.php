@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\EgresoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\indexController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +22,8 @@ Route::get('/', function () {
     Route::group(['prefix'=> 'admin'],function(){
     Route::get('Panel-Administrativo', [indexController::class, 'index'])->name('dashboard');
     });
+    
+    Route::resource('egresos', EgresoController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
