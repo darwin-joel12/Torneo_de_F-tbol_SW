@@ -13,10 +13,16 @@
         "laravel/jetstream": "^4.2",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+<<<<<<< HEAD
         "livewire/livewire": "^2.12"
+=======
+        "laravel/ui": "^4.3",
+        "livewire/livewire": "^3.0"
+>>>>>>> fbcf5b4809c95541bae4acdb76800a954a248a63
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
+        "ibex/crud-generator": "^1.4",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
         "mockery/mockery": "^1.4.4",

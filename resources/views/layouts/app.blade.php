@@ -7,6 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<<<<<<< HEAD
     <title>@hasSection('title') @yield('title') | @endif {{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
@@ -16,6 +17,16 @@
     <!-- Scripts -->
     @vite(['resources/js/app.js'])
     @livewireStyles
+=======
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+>>>>>>> fbcf5b4809c95541bae4acdb76800a954a248a63
 </head>
 <body>
     <div id="app">
@@ -30,6 +41,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+<<<<<<< HEAD
 					@auth()
                     <ul class="navbar-nav mr-auto">
 						<!--Nav Bar Hooks - Do not delete!!-->
@@ -67,6 +79,40 @@
                                         {{ __('Logout') }}
                                     </a>
 
+=======
+                    <ul class="navbar-nav me-auto">
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+>>>>>>> fbcf5b4809c95541bae4acdb76800a954a248a63
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -82,6 +128,7 @@
             @yield('content')
         </main>
     </div>
+<<<<<<< HEAD
     @livewireScripts
     <script type="module">
         const addModal = new bootstrap.Modal('#createDataModal');
@@ -93,3 +140,7 @@
     </script>
 </body>
 </html>
+=======
+</body>
+</html>
+>>>>>>> fbcf5b4809c95541bae4acdb76800a954a248a63
